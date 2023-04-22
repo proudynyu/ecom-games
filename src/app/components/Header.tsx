@@ -1,26 +1,29 @@
 import Link from 'next/link';
 import { IoLogoGameControllerB } from 'react-icons/io'
-import { AiOutlineShoppingCart, AiOutlineSearch } from 'react-icons/ai'
+
+import { SearchBar } from './SearchBar';
+import { SignIn } from './SignIn';
+import { Cart } from './Cart';
+import { Navbar } from './Navbar';
+
 
 export function Header() {
   return (
-    <header className="fixed w-full h-[60px] flex flex-col items-center justify-center top-0">
-      <div className="h-full w-full transparent flex items-center justify-between px-4">
-        <Link href="/">
+    <header className="fixed w-full  flex flex-col items-center justify-center top-0">
+      <div className="min-h-max w-full h-[60px] max-w-[1200px] transparent flex items-center justify-between px-4">
+        <Link href="/" className='flex items-center gap-2 text-white font-bold'>
           <IoLogoGameControllerB size={32} color='white'/>
+          <span>E-Games</span>
         </Link>
+ 
+        <SearchBar />
 
-        <div className='w-2/4'>
-          <label htmlFor='searchBar' className='relative'>
-            <input type='text' className="bg-white w-full rounded pl-6 py-1 outline-none" name="searchBar" placeholder='Search'/>
-            <span className='pointer absolute left-1 bottom-2/4 translate-y-2/4'><AiOutlineSearch size={16} /></span>
-          </label>
+        <div className='flex items-center justify-between gap-4'>
+          <SignIn />
+          <Cart />
         </div>
-
-        <button>
-          <AiOutlineShoppingCart size={24} color="white" />
-        </button>
       </div>
+      <Navbar />
     </header>
   );
 }

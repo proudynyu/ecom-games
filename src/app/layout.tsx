@@ -1,5 +1,13 @@
+import { Inter } from 'next/font/google'
 import { Header } from "./components/Header";
 import "./globals.css";
+
+const inter = Inter({
+  display: 'swap',
+  weight: ['100', '500', '600', '700'],
+  variable: '--font-inter',
+  subsets: ['latin']
+})
 
 export const metadata = {
   title: "Create Next App",
@@ -13,9 +21,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-slate-900">
+      <body className={`bg-slate-900 antialiased ${inter.className}`}>
         <Header />
-
         <main>{children}</main>
       </body>
     </html>
