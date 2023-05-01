@@ -1,10 +1,12 @@
-import React from 'react'
-import { AiOutlineUserAdd } from 'react-icons/ai'
+import React from "react";
+import { AiOutlineUserAdd } from "react-icons/ai";
+
+import { Button } from './Button'
 
 export function SignIn() {
-  return (
-    <button className='hover:bg-slate-400 px-2 py-2 rounded'>
-      <AiOutlineUserAdd size={24} color="white" />
-    </button>
-  )
+    return (
+        <Button>
+            <AiOutlineUserAdd size={24} color="white" />
+        </Button>
+    );
 }
