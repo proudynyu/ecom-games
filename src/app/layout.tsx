@@ -23,7 +23,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`bg-slate-900 antialiased ${inter.className}`}>
         <Header />
-        <main>{children}</main>
+        <main className='max-w-[1200px] mx-auto'>{children}</main>
       </body>
     </html>
   );
