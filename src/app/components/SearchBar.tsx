@@ -13,7 +13,7 @@ export function SearchBar() {
     }
 
     return (
-        <div className="w-2/4">
+        <div>
             <Button onClick={handleShowSearch}>
                 <AiOutlineSearch size={24} color="white" />
             </Button>

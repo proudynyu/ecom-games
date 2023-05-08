@@ -1,5 +1,7 @@
 import React from "react";
 import Link from "next/link";
+import { Button } from "./Button";
+import { SearchBar } from "./SearchBar";
 
 type CategoryMenuHeaderLinks = {
     name: string;
@@ -17,8 +19,12 @@ const CATEGORIES: Readonly<CategoryMenuHeaderLinks[]> = [
 
 export function Navbar() {
     return (
-        <nav className="min-h-max w-full max-w-[1200px] px-4 py-2">
-            <ul className="h-[60px] flex items-center justify-between text-white gap-2">
+        <nav className="min-h-max w-full max-w-[1200px] px-4 py-2 border border-white rounded">
+            <div className="w-full justify-between items-center h-[60px] flex md:hidden">
+                <Button>Ham</Button>
+                <SearchBar />
+            </div>
+            <ul className="h-[60px] items-center justify-between text-white gap-2 hidden md:flex">
                 {CATEGORIES.map(category => (
                     <li
                         key={category.name}

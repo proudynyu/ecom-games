@@ -19,7 +19,9 @@ export function Header() {
                 </Link>
 
                 <div className="flex items-center justify-between gap-4">
-                    <SearchBar />
+                    <div className="hidden md:block">
+                        <SearchBar />
+                    </div>
                     <SignIn />
                     <Cart />
                 </div>
