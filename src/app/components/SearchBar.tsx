@@ -12,16 +12,26 @@ export function SearchBar() {
         setShowSearch(!showSearch);
     }
 
+    function handleKeyPress(e: React.KeyboardEvent<HTMLDivElement>) {
+        if (e.key === "Enter") {
+            handleShowSearch();
+        }
+    }
+
     return (
         <div>
-            <Button onClick={handleShowSearch}>
+            <Button onClick={() => handleShowSearch()}>
                 <AiOutlineSearch size={24} color="white" />
             </Button>
             {showSearch ? (
                 <div className="z-10 absolute left-0 top-0 w-screen h-screen flex items-center justify-center">
                     <div
+                        aria-label="Close search"
+                        tabIndex={0}
+                        role="button"
                         className="opacity-5 w-full h-full bg-white absolute"
-                        onClick={handleShowSearch}
+                        onClick={() => handleShowSearch()}
+                        onKeyDown={(e) => handleKeyPress(e)}
                     />
                     <div className="z-10 flex flex-col items-center justify-start px-2 py-2 w-[500px] rounded bg-slate-950">
                         <label htmlFor="searchBar" className="relative w-full">
