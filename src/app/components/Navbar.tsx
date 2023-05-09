@@ -14,7 +14,7 @@ const CATEGORIES: Readonly<CategoryMenuHeaderLinks[]> = [
     { name: "puzzle", href: "#" },
     { name: "action", href: "#" },
     { name: "rpg", href: "#" },
-    { name: "strategy", href: "#" }
+    { name: "strategy", href: "#" },
 ];
 
 export function Navbar() {
@@ -25,7 +25,7 @@ export function Navbar() {
                 <SearchBar />
             </div>
             <ul className="h-[60px] items-center justify-between text-white gap-2 hidden md:flex">
-                {CATEGORIES.map(category => (
+                {CATEGORIES.map((category) => (
                     <li
                         key={category.name}
                         className="group list-none h-full relative"

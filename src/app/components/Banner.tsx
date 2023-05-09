@@ -9,9 +9,7 @@ interface BannerProps extends LinkProps {
 function Placeholder({ bannerType }: Pick<BannerProps, "bannerType">) {
     const height = bannerType === "full" ? 800 : 150;
     return (
-        <div
-            className={`bg-slate-500 h-[${height}px] w-full rounded-[16px]`}
-        ></div>
+        <div className={`bg-slate-500 h-[${height}px] w-full rounded-[16px]`} />
     );
 }
 
@@ -22,7 +20,7 @@ export function Banner({ bannerType, src = "", ...props }: BannerProps) {
         <>
             {src ? (
                 <NextLink {...props}>
-                    <NextImage src={""} alt="" width={1200} height={height} />
+                    <NextImage src={src} alt="" width={1200} height={height} />
                 </NextLink>
             ) : (
                 <Placeholder bannerType={bannerType} />
